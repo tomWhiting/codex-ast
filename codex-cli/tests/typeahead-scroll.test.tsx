@@ -9,14 +9,14 @@ import * as React from "react";
 import { describe, it, expect, vi } from "vitest";
 
 // ---------------------------------------------------------------------------
-//  Mock <ink-select-input> so we can capture the props that TypeaheadOverlay
+//  Mock <select-input> so we can capture the props that TypeaheadOverlay
 //  forwards without rendering the real component (which would require a full
 //  Ink TTY environment).
 // ---------------------------------------------------------------------------
 
 let receivedItems: Array<{ label: string; value: string }> | null = null;
 
-vi.mock("ink-select-input", () => {
+vi.mock("select-input", () => {
   return {
     default: (props: any) => {
       receivedItems = props.items;
